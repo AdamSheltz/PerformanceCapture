@@ -21,7 +21,6 @@ perf_insights="/home/AzureAdam/perfinsights.py"
 
 gather_data(){
 echo "Gathring Data"
-        touch /root/$NOW
         iostat -myzcxtd 1 300 >> /tmp/$HOSTNAME.iostat.$NOW.log&
         sudo python3 $perf_insights -r vmslow -d 300s -a -o /tmp/$NOW.perfinsights&
 }
